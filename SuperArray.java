@@ -12,6 +12,7 @@ public class SuperArray {
     }
 
     public void add(String element) {
+        if(size >= data.length) resize();
         data[size] = element;
         ++size;
     }
