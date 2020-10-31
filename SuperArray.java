@@ -10,4 +10,9 @@ public class SuperArray {
     public int size() {
         return size;
     }
+
+    public void add(String element) {
+        data[size] = element;
+        ++size;
+    }
 }
