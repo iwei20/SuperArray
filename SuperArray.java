@@ -41,6 +41,13 @@ public class SuperArray {
         return result;
     }
 
+    public boolean contains(String s) {
+        for(int i = 0; i < size; ++i) {
+            if(s.equals(data[i])) return true;
+        }
+        return false;
+    }
+
     private void resize() {
         String[] temp = new String[data.length + 10];
         for(int i = 0; i < data.length; ++i) {
