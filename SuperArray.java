@@ -28,6 +28,11 @@ public class SuperArray {
         return temp;
     }
 
+    public void clear() {
+        data = new String[size];
+        size = 0;
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
