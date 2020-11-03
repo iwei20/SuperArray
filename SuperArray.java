@@ -60,6 +60,14 @@ public class SuperArray {
         return size == 0;
     }
 
+    public String[] toArray() {
+        String[] result = new String[size];
+        for(int i = 0; i < size; ++i) {
+            result[i] = data[i];
+        }
+        return result;
+    }
+    
     public String toString() {
         if(size == 0) return "[]";
         String result = "[";
