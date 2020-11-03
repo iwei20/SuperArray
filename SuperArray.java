@@ -51,6 +51,7 @@ public class SuperArray {
     }
 
     public String toString() {
+        if(size == 0) return "[]";
         String result = "[";
         for(int i = 0; i < size - 1; ++i) {
             result += data[i] + ", ";
