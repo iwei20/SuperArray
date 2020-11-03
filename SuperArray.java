@@ -25,7 +25,7 @@ public class SuperArray {
 
     public void add(int index, String element) {
         if(size >= data.length) resize();
-        for(int i = size - 1; i >= index; ++i) {
+        for(int i = size - 1; i >= index; --i) {
             data[i + 1] = data[i];
         }
         ++size;
@@ -67,7 +67,7 @@ public class SuperArray {
         }
         return result;
     }
-    
+
     public String toString() {
         if(size == 0) return "[]";
         String result = "[";
