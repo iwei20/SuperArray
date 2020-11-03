@@ -35,7 +35,7 @@ public class SuperArray {
     public String toString() {
         String result = "[";
         for(int i = 0; i < size - 1; ++i) {
-            result += data[i];
+            result += data[i] + ", ";
         }
         result += data[size - 1] + "]";
         return result;
