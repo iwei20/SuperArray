@@ -28,6 +28,10 @@ public class SuperArray {
         return temp;
     }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
     private void resize() {
         String[] temp = new String[data.length + 10];
         for(int i = 0; i < data.length; ++i) {
