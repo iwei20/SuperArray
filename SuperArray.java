@@ -32,6 +32,15 @@ public class SuperArray {
         return size == 0;
     }
 
+    public String toString() {
+        String result = "[";
+        for(int i = 0; i < size - 1; ++i) {
+            result += data[i];
+        }
+        result += data[size - 1] + "]";
+        return result;
+    }
+
     private void resize() {
         String[] temp = new String[data.length + 10];
         for(int i = 0; i < data.length; ++i) {
