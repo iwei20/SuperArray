@@ -43,7 +43,9 @@ public class SuperArray {
 
     public boolean contains(String s) {
         for(int i = 0; i < size; ++i) {
-            if(s.equals(data[i])) return true;
+            // For ease of programming, for now our list strictly doesn't care about null
+            // Remember that equals fails on null
+            if(data[i].equals(s)) return true;
         }
         return false;
     }
