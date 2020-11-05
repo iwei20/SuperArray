@@ -94,6 +94,13 @@ public class SuperArray {
         return -1;
     }
 
+    public int lastIndexOf(String value) {
+        for(int i = size - 1; i >= 0; --i) {
+            if(data[i].equals(value)) return i;
+        }
+        return -1;
+    }
+
     private void resize() {
         String[] temp = new String[data.length * 2]; // Factor in copy speed and benefit from max size
         for(int i = 0; i < data.length; ++i) {
