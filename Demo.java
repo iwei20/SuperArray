@@ -1,6 +1,20 @@
 import java.util.Arrays;
 
 public class Demo {
+    public static void removeDuplicates(SuperArray s) {
+        for(int i = s.size() - 1; i >= 0; --i) {
+            if(i != s.indexOf(s.get(i))) s.remove(i);
+        }
+    }
+
+    public static SuperArray findOverlap(SuperArray a, SuperArray b) {
+        SuperArray result = new SuperArray();
+        for(int i = 0; i < a.size(); ++i) {
+            if(b.contains(a.get(i))) result.add(a.get(i));
+        }
+        removeDuplicates(result);
+        return result;
+    }
     public static void main(String[] args) {
         SuperArray words = new SuperArray();
         System.out.println(words.isEmpty());
@@ -54,7 +68,7 @@ public class Demo {
         System.out.println(things.isEmpty());
         things.add("A");
         things.add("A");
-        SuperArray.removeDuplicates(things);
+        removeDuplicates(things);
         System.out.println(things);
         things.add("C");
         things.add("D");
@@ -65,7 +79,7 @@ public class Demo {
         toCompare.add("D");
         System.out.println(toCompare.lastIndexOf("A"));
         System.out.println(toCompare.lastIndexOf("B"));
-        System.out.println(SuperArray.findOverlap(things, toCompare));
-        System.out.println(SuperArray.findOverlap(things, toCompare).lastIndexOf("D"));
+        System.out.println(findOverlap(things, toCompare));
+        System.out.println(findOverlap(things, toCompare).lastIndexOf("D"));
     }
 }
