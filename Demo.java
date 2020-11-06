@@ -70,6 +70,7 @@ public class Demo {
         things.add("A");
         removeDuplicates(things);
         System.out.println(things);
+        things.add("A");
         things.add("C");
         things.add("D");
 
