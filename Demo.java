@@ -94,5 +94,7 @@ public class Demo {
         System.out.println(findOverlap(things, toCompare).lastIndexOf("D"));
         System.out.println(zip(things, findOverlap(things, toCompare)));
         System.out.println(zip(new SuperArray(), new SuperArray()));
+        System.out.println(findOverlap(new SuperArray(), zip(things, new SuperArray())).equals(new SuperArray()));
+        System.out.println(zip(things, findOverlap(new SuperArray(), toCompare)).equals(new SuperArray()));
     }
 }
