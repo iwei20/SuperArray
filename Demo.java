@@ -15,6 +15,16 @@ public class Demo {
         removeDuplicates(result);
         return result;
     }
+
+    public static SuperArray zip(SuperArray a, SuperArray b) {
+        SuperArray result = new SuperArray();
+        for(int i = 0; i < Math.max(a.size(), b.size()); ++i) {
+            if(i < a.size()) result.add(a.get(i));
+            if(i < b.size()) result.add(b.get(i));
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         SuperArray words = new SuperArray();
         System.out.println(words.isEmpty());
@@ -82,5 +92,7 @@ public class Demo {
         System.out.println(toCompare.lastIndexOf("B"));
         System.out.println(findOverlap(things, toCompare));
         System.out.println(findOverlap(things, toCompare).lastIndexOf("D"));
+        System.out.println(zip(things, findOverlap(things, toCompare)));
+        System.out.println(zip(new SuperArray(), new SuperArray()));
     }
 }
