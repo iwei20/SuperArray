@@ -87,6 +87,14 @@ public class SuperArray {
         return false;
     }
 
+    public boolean equals(SuperArray other) {
+        if(size != other.size()) return false;
+        for(int i = 0; i < size; ++i) {
+            if(data[i] != other.get(i)) return false; 
+        }
+        return true;
+    }
+
     public int indexOf(String s) {
         for(int i = 0; i < size; ++i) {
             if(data[i].equals(s)) return i;
