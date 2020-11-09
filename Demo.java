@@ -96,5 +96,88 @@ public class Demo {
         System.out.println(zip(new SuperArray(), new SuperArray()));
         System.out.println(findOverlap(new SuperArray(), zip(things, new SuperArray())).equals(new SuperArray()));
         System.out.println(zip(things, findOverlap(new SuperArray(), toCompare)).equals(new SuperArray()));
+
+        int errors = 0;
+        try{
+            SuperArray negative = new SuperArray(-5);
+        } catch(IllegalArgumentException e) {
+            ++errors;
+        }
+
+        try{
+            things.set(things.size(), "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.set(100000000, "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+            e.printStackTrace();
+        }
+
+        try{
+            things.set(-1, "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.add(things.size(), "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.add(100000000, "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.add(-1, "YEP");
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            System.out.println(things.get(things.size()));
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            System.out.println(things.get(10000000));
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            System.out.println(things.get(-1));
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.remove(things.size());
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.remove(100000000);
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        try{
+            things.remove(-1);
+        } catch(IndexOutOfBoundsException e) {
+            ++errors;
+        }
+
+        System.out.println(errors + " out of 13 errors");
+
     }
 }
