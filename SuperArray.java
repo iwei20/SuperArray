@@ -115,7 +115,7 @@ public class SuperArray {
     }
 
     private void resize() {
-        String[] temp = new String[data.length * 2]; // Factor in copy speed and benefit from max size
+        String[] temp = new String[data.length * 2 + 1]; // Factor in copy speed and benefit from max size
         for(int i = 0; i < data.length; ++i) {
             temp[i] = data[i];
         }
